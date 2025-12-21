@@ -399,8 +399,7 @@ class _quizmakeState extends State<quizmake> {
                               borderRadius: BorderRadius.circular(10),
                               color: const Color.fromARGB(255, 189, 189, 189)
                             ),
-                            width: 50,
-                            height: 50,
+                            
                             child: Text(convlist[index].toString()),
                           ),
                         );
