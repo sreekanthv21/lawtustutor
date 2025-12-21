@@ -378,7 +378,7 @@ class _quizmakeState extends State<quizmake> {
                     
                     
                     GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: containerwidth<=600?5:8),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: (constraints.maxHeight/constraints.maxWidth>1)?5:8),
                       itemCount: questions.length,
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
