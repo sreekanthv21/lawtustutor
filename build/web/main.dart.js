@@ -99139,9 +99139,10 @@ e=A.cL(d,d,d,new A.W(B.ka,h),d,d,new A.W(new A.t(l,40),i),d,d,d,d,d,d,d,d,d,new 
 e=A.dE(!1,A.a2("Delete",d,d,d,A.bb(d,d,B.Fw,d,d,d,d,d,d,d,d,d,d,d,d,d,d,!0,d,d,d,d,d,d,d,d),d,d,d),d,d,!0,d,new A.aMJ(c,a),new A.aMK(),d,e)
 j=A.cL(d,d,d,new A.W(B.k1,h),d,d,new A.W(new A.t(l,40),i),d,d,d,d,d,d,d,d,d,new A.W(new A.a4(8,5,8,5),j),d,new A.W(new A.bF(A.bX(5),B.m),g),d,d,d,d,d,d)
 j=A.c6(A.b([f,e,A.dE(!1,A.a2("Reorder",d,d,d,A.bb(d,d,B.er,d,d,d,d,d,d,d,d,d,d,d,d,d,d,!0,d,d,d,d,d,d,d,d),d,d,d),d,d,!0,d,d,new A.aML(c),d,j)],b),B.o,B.fD,B.r)
-e=A.aQv(d,B.K,new A.Wi(8,1),new A.aMM(c),c.w.a,d,new A.F3(d),!0)
+l=r<=600?5:8
+l=A.aQv(d,B.K,new A.Wi(l,1),new A.aMM(c),c.w.a,d,new A.F3(d),!0)
 g=A.cL(d,d,d,new A.W(B.l,h),d,d,new A.W(new A.t(600,50),i),d,d,d,d,d,d,d,d,d,d,d,new A.W(new A.bF(A.bX(10),B.m),g),d,d,d,d,d,d)
-return A.cc(A.bl(d,A.uG(A.cm(A.b([q,new A.aj(d,20,d,d),p,o,n,m,k,new A.aj(d,20,d,d),j,new A.aj(d,20,d,d),e,new A.aj(d,20,d,d),A.dE(!1,A.a2("Next",d,d,d,A.bb(d,d,B.j,d,d,d,d,d,d,d,d,d,d,d,d,d,d,!0,d,d,d,d,d,d,d,d),d,d,d),d,d,!0,d,d,new A.aMN(c,a),d,g),new A.aj(d,30,d,d)],b),B.o,B.x,B.r),d,d,d,d,B.Q),B.n,d,d,d,d,1000,d,d,d,d,d,r),d,d)},
+return A.cc(A.bl(d,A.uG(A.cm(A.b([q,new A.aj(d,20,d,d),p,o,n,m,k,new A.aj(d,20,d,d),j,new A.aj(d,20,d,d),l,new A.aj(d,20,d,d),A.dE(!1,A.a2("Next",d,d,d,A.bb(d,d,B.j,d,d,d,d,d,d,d,d,d,d,d,d,d,d,!0,d,d,d,d,d,d,d,d),d,d,d),d,d,!0,d,d,new A.aMN(c,a),d,g),new A.aj(d,30,d,d)],b),B.o,B.x,B.r),d,d,d,d,B.Q),B.n,d,d,d,d,1000,d,d,d,d,d,r),d,d)},
 $S:31}
 A.aMH.prototype={
 $3(a,b,c){var s=this.a,r=s.cy.a,q=t.S
