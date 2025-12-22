@@ -340,10 +340,12 @@ Future<void> scheduledeleteFunction(task1id,task2id) async {
                                   backgroundColor: WidgetStatePropertyAll(const Color.fromARGB(255, 0, 0, 0))
                                 ),
                                   onPressed: () async{
+                                    
                                     if(showquiz.text=='' || showres.text==''){
                                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Dude, first fill the field')));
                                     }
-                                    else if(DateTime.now().isBefore( widget.data['endtime'].toDate()) && showres.text=='Yes'){
+                                    
+                                    else if(DateTime.now().isBefore( scheduledata['endtime'].toDate()) && showres.text=='Yes'){
                                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Dude, first let the quiz finish ')));
                                     }
                                     else
