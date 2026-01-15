@@ -90,12 +90,11 @@ class _addvideopageState extends State<addvideopage> {
     
 
     try{
-      print('yo');
       showDialog(
         barrierDismissible: false,
         context: context,
         builder: (context) {
-          return Center(child: SizedBox(width: 30,height: 30,child: CircularProgressIndicator()));
+          return PopScope(canPop: false,child: Center(child: SizedBox(width: 30,height: 30,child: CircularProgressIndicator())));
         },
       );
       await FirebaseFirestore.instance.collection('videos').doc('lawtusvids').set(newvideos);

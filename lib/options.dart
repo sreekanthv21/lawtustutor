@@ -71,7 +71,7 @@ class _schedulepageState extends State<schedulepage> {
 }
 // deleteschedule
 Future<void> scheduledeleteFunction(task1id,task2id) async {
-  final url = Uri.parse('https://lawtusbackend.onrender.com/deletecloudtask');
+  final url = Uri.parse('https://lawtusbackend.onrender.com/deletecloudtasktest');
 
   final payload = {
     'task1id':task1id,
@@ -125,16 +125,18 @@ Future<void> scheduledeleteFunction(task1id,task2id) async {
         if(snapshot.hasError){
           return Text('error');
         }
+        if(!snapshot.hasData || snapshot.data==null || snapshot.data!.data()==null ){
+          return Container();
+        }
         
         Map? scheduledata=snapshot.data!.data();
         bool isScheduled=false;
-        print(scheduledata);
+   
         if(scheduledata!['scheduledstarttime']!=null){
           isScheduled=true;
         }
         
-        print(isScheduled);
-        print(scheduledata!['scheduledstarttime']);
+       
         
         
 
@@ -233,12 +235,16 @@ Future<void> scheduledeleteFunction(task1id,task2id) async {
                                       try{
                                         showDialog(
                                           context: context,
+                                          barrierDismissible: false,
                                           builder: (context) {
-                                            return Center(
-                                              child: SizedBox(
-                                                height: 30,
-                                                width: 30,
-                                                child: CircularProgressIndicator()
+                                            return PopScope(
+                                              canPop: false,
+                                              child: Center(
+                                                child: SizedBox(
+                                                  height: 30,
+                                                  width: 30,
+                                                  child: CircularProgressIndicator()
+                                                ),
                                               ),
                                             );
                                           },
@@ -365,33 +371,38 @@ Future<void> scheduledeleteFunction(task1id,task2id) async {
                               minimumSize: WidgetStatePropertyAll(Size(double.infinity,50)),
                               backgroundColor: WidgetStatePropertyAll(const Color.fromARGB(255, 234, 234, 234))
                             ),
-                            onPressed: () async{
+                            onPressed: () {
+                              
+                            },
+                            onLongPress: () {
                               try
                               {
                                 showDialog(
                                   barrierDismissible: false,
                                   context: context,
                                   builder: (context) {
-                                    return Center(
-                                      child: SizedBox(width:30,height:30 ,child:CircularProgressIndicator()),
+                                    return PopScope(
+                                      canPop: false,
+                                      child: Center(
+                                        child: SizedBox(width:30,height:30 ,child:CircularProgressIndicator()),
+                                      ),
                                     );
                                   },
                                 );
-                                await FirebaseFirestore.instance.collection('tests').doc(widget.quizid).delete();
-                                if(context.mounted){
-                                  Navigator.pop(context);
-                                }
-                                }
+                                FirebaseFirestore.instance.collection('tests').doc(widget.quizid).delete();
+                                
+                                Navigator.pop(context);
+                                Navigator.pop(context);
+                                Navigator.pop(context);
+                                
+                                
+                                
+                              }
                               catch(e){
-                                if(context.mounted){
-                                  Navigator.pop(context);
-                                }
+                                
+                                Navigator.pop(context);
+                                
                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error')));
-                              }finally{
-                                if(context.mounted){
-                                  Navigator.pop(context);
-                                }
-                               
                               }
                               
                             },

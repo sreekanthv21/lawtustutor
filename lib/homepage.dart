@@ -79,6 +79,7 @@ class _HomepageState extends State<Homepage> {
                   },
                   child: Text('Videos',style: TextStyle(color: Colors.white)),
                 ),
+                Text('hi')
                 
                 
               ],
